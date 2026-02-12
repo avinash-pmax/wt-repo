@@ -61,33 +61,56 @@ p:visited{
 
 .navbar{
     background-color: orange;
-    padding: 30px 15px;
-    width: 100%;
+    padding: 15px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     box-sizing: border-box;
     flex-shrink: 0;
+    overflow-x: hidden;
 }
 
 .navdiv{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     width: 100%;
+    gap: 15px;
+    max-width: 100%;
 }
 
 .logo{
     color: white;
-    font-size: 35px;
+    font-size: 15px;
     font-weight: 500;
-    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    grid-column: 1;
 }
 
 ul{
-    margin-left: auto;
     display: flex;
     align-items: center;
     gap: 15px;
-    white-space: nowrap;
     flex-wrap: nowrap;
+    justify-content: flex-end;
+    grid-column: 3;
+}
+
+ul li:first-child {
+    position: static;
+    transform: none;
+    order: 0;
+    margin: 0;
+    flex-basis: auto;
+    grid-column: 2;
+    justify-self: center;
 }
 
 li{
@@ -123,4 +146,108 @@ button a{
 
 button:hover{
     background-color: green;
+}
+.logo img{
+    height: 40px;
+    width: auto;
+}
+
+.search-bar{
+    padding: 10px 15px;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-size: 14px;
+    width: clamp(150px, 20vw, 280px);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.search-bar::placeholder{
+    color: #999;
+}
+
+.search-bar:focus{
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    width: clamp(160px, 22vw, 300px);
+}
+
+/* Tablet screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 10px;
+    }
+    
+    .navdiv {
+        gap: 10px;
+    }
+    
+    .logo {
+        font-size: 13px;
+        gap: 3px;
+    }
+    
+    .search-bar {
+        width: clamp(120px, 18vw, 200px);
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .search-bar:focus {
+        width: clamp(130px, 20vw, 220px);
+    }
+    
+    ul {
+        gap: 10px;
+    }
+    
+    ul a {
+        font-size: 14px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 8px;
+    }
+    
+    .navdiv {
+        gap: 6px;
+        grid-template-columns: auto 1fr auto;
+    }
+    
+    .logo {
+        font-size: 11px;
+        gap: 2px;
+    }
+    
+    .logo img {
+        height: 30px;
+    }
+    
+    .search-bar {
+        width: clamp(100px, 16vw, 150px);
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .search-bar:focus {
+        width: clamp(110px, 18vw, 170px);
+    }
+    
+    ul {
+        gap: 6px;
+    }
+    
+    ul a {
+        font-size: 12px;
+    }
+    
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
 }
