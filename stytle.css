@@ -8,7 +8,7 @@ html,body{
     width: 100%;
     display: flex;
 }
-button{
+/*button{
     width: 100px;
     height: 50px;
     background-color: black;
@@ -17,11 +17,11 @@ button{
     border-radius: 10px;
 
 }
-/*button:hover{
+button:hover{
     background-color: white;
     color: black;
     border: 1px solid black;
-}*/
+}
 button:active{
     background-color: white;
     color: black;
@@ -39,4 +39,20 @@ p:active{
 }   
 p:visited{
     color: red;
+}*/
+h1{
+    font-size: 25px;
+    color: black;
+}
+
+.yellow{
+    color: yellow;
+}
+
+.cred{
+    color: red;
+}
+
+.cpurple{
+    color: purple;
 }
