@@ -50,7 +50,7 @@ h1{
 }
 
 .cred{
-    color: red;
+    color: red important; 
 }
 
 .cpurple{
